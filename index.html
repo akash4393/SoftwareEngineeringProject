@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Age of Mythology</title>
+    <script src="libs/phaser.min.js"></script>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width">
+    <script src="Boot.js"></script>
+    <script src="LoadBoard.js"></script>
+    <script src="LoadResources.js"></script>
+    <script src="ShowPlayerBoard.js"></script>
+    <script src="ConfirmSelection.js"></script>
+    <script src="ProductionTileSelection.js"></script>
+    <script src="GamePlay.js"></script>
+    
+
+
+    
+	<style>
+		body {
+			padding: 0;
+			margin: 0;
+			background-color: #FFFFFF;
+            
+		}
+	</style>
+</head>
+<body>
+    <div id="Game container"></div>
+    <script type="text/javascript">
+        window.onload = function() 
+    {
+                var game = new Phaser.Game( "100%", "100%", Phaser.CANVAS, "Game container"); 
+                game.state.add('Boot', aom.Boot);
+                game.state.add('LoadBoard', aom.LoadBoard);
+                game.state.add('LoadResources', aom.LoadResources);
+                game.state.add('ShowPlayerBoard', aom.ShowPlayerBoard);
+                game.state.add('ConfirmSelection', aom.ConfirmSelection);
+                game.state.add('ProductionTileSelection', aom.ProductionTileSelection);
+                game.state.add('GamePlay', aom.GamePlay);
+                game.state.start('Boot');    // Boots the game using the mainmenu.js method() which also calls the preloader()
+    }
+    
+    </script>    
+                    
+                            
+                  
+</body>
+</html>
